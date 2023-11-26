@@ -63,24 +63,27 @@ def process_directory(directory):
                 if not os.listdir(dir_path):
                     os.rmdir(dir_path)
 
-if __name__ == "__main__":
+def main():
     import sys
 
     if len(sys.argv) != 2:
-        print("Usage: python sort.py <directory>")
+        print("Використання: clean-folder <каталог>")
         sys.exit(1)
 
     target_directory = sys.argv[1]
     process_directory(target_directory)
 
-    print("\nFile sorting completed.\n")
+    print("\nСортування файлів завершено.\n")
 
-    print("Known Extensions:")
-    print("Images:", IMAGE_EXTENSIONS)
-    print("Video:", VIDEO_EXTENSIONS)
-    print("Documents:", DOCS_EXTENSIONS)
-    print("Music:", MUSIC_EXTENSIONS)
-    print("Archives:", ARCHIVE_EXTENSIONS)
+    print("Відомі розширення:")
+    print("Зображення:", IMAGE_EXTENSIONS)
+    print("Відео:", VIDEO_EXTENSIONS)
+    print("Документи:", DOCS_EXTENSIONS)
+    print("Музика:", MUSIC_EXTENSIONS)
+    print("Архіви:", ARCHIVE_EXTENSIONS)
 
-    print("\nUnknown Extensions:")
+    print("\nНевідомі розширення:")
     print(UNKNOWN_EXTENSIONS)
+
+if __name__ == "__main__":
+    main() 
